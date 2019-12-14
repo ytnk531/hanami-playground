@@ -12,6 +12,8 @@ group :development do
   gem 'shotgun', platforms: :ruby
   gem 'hanami-webconsole'
   gem 'pry'
+  gem 'guard'
+  gem 'guard-rspec', require: false
 end
 
 group :test, :development do
