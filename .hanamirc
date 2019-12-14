@@ -1,0 +1,3 @@
+project=bookshel
+test=rspec
+template=erb
