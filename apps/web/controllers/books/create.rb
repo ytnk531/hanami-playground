@@ -7,7 +7,7 @@ module Web
         def call(params)
           BookRepository.new.create(params[:book])
 
-          redirect_to '/'
+          redirect_to '/books'
         end
       end
     end
