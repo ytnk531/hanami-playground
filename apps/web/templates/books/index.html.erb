@@ -1,6 +1,23 @@
 <h2>Book</h2>
 
-<% books.each do |book| %>
-  <h2><%= book.title %></h2>
-  <p><%= book.author %></p>
-<% end %>
+<%=
+    form_for :book, '/books' do
+        label :title
+        text_field :title
+
+        label :author
+        text_field :author
+
+        submit 'Create'
+    end
+%>
+
+<div class="book-container">
+  <% books.each do |book| %>
+    <div class="book">
+      <h3><%= book.title %></h3>
+      <p><%= book.author %></p>
+      <%= link_to 'Edit', "books/#{book.id}/edit" %>
+    </div>
+  <% end %>
+</div>
