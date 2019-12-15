@@ -1,0 +1,11 @@
+<%=
+    form_for :book, '/books' do
+        label :title
+        text_field :title
+
+        label :author
+        text_field :author
+
+        submit 'Create'
+    end
+%>
