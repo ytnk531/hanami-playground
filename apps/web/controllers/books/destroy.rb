@@ -1,12 +1,13 @@
 module Web
   module Controllers
     module Books
-      class New
+      class Destroy
         include Web::Action
 
-        expose :book
-
         def call(params)
+          BookRepository.new.delete(params[:id])
+
+          redirect_to routes.books_path
         end
       end
     end

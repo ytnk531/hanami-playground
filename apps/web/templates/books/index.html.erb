@@ -1,23 +1,18 @@
 <h2>Book</h2>
 
-<%=
-    form_for :book, '/books' do
-        label :title
-        text_field :title
-
-        label :author
-        text_field :author
-
-        submit 'Create'
-    end
-%>
+<%= link_to 'New', routes.new_book_path %>
 
 <div class="book-container">
   <% books.each do |book| %>
     <div class="book">
       <h3><%= book.title %></h3>
       <p><%= book.author %></p>
-      <%= link_to 'Edit', "books/#{book.id}/edit" %>
+      <%= link_to 'Edit', routes.edit_book_path(id: book.id) %>
+      <%=
+        form_for :book, routes.book_path(id: book.id), method: :delete do
+          submit '削除'
+        end
+      %>
     </div>
   <% end %>
 </div>

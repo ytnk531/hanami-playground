@@ -1,12 +1,12 @@
 module Web
   module Controllers
     module Books
-      class New
+      class Update
         include Web::Action
 
-        expose :book
-
         def call(params)
+          BookRepository.new.update(params[:id], params[:book])
+          redirect_to routes.books_path
         end
       end
     end
