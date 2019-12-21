@@ -5,7 +5,7 @@ gem 'hanami',       '~> 1.3'
 gem 'hanami-model', '~> 1.3'
 gem 'sassc'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 group :development do
   # Code reloading
@@ -15,6 +15,7 @@ group :development do
   gem 'pry'
   gem 'guard'
   gem 'guard-rspec', require: false
+  gem 'sqlite3'
 end
 
 group :test, :development do
