@@ -16,3 +16,11 @@
     </div>
   <% end %>
 </div>
+<div class="pager">
+<% if page != 0 %>
+  <%= link_to '<', routes.books_path(page: page - 1) %>
+<% end %>
+<% if !pager_last %>
+  <%= link_to '>', routes.books_path(page: page + 1) %>
+<% end %>
+</div>

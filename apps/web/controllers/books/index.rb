@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web
   module Controllers
     module Books
@@ -5,9 +7,11 @@ module Web
         include Web::Action
 
         expose :books
+        expose :page
 
         def call(params)
-          @books = BookRepository.new.all
+          @page = params[:page].to_i
+          @books = BookRepository.new.pagenate(@page)
         end
       end
     end
